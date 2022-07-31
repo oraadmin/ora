@@ -1,0 +1,11 @@
+{
+  "name": "site",
+  "version": "4.5.0",
+  "description": "Portfolio",
+  "main": "app.js",
+  "scripts": {
+    "start": "run buildings"
+  },
+  "author": "OFORI RICHARD",
+  "license": "ISC"
+}

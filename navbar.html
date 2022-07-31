@@ -1,0 +1,128 @@
+  <!--link to font awesome -->
+  <link rel="stylesheet" href="./font/css/all.css">
+  <div class="innert" id="innert">
+        <br><br>
+        <a class="site_title">MADE BY THE ORA TEAM</a>
+   <div class="maps" id="maps">
+    <ul class="menu">
+        <li><a href="/index.html" class="active">PORTFOLIO</a></li>
+        <li><a href="/about.html">ABOUT</a></li>
+        <li><a href="/contact.html">CONTACT</a></li>
+        <li><a href="/post.html">POST</a></li>
+   </div>
+</ul>
+<div class="slide-menu" id="slide">
+
+</div>
+  <div class="fas" id="fas">
+    <a class="fa fa-bars" onclick="slideBars()"></a>
+  </div>
+    </div>
+
+<style>
+    @media screen and (max-width:1400px){
+         .slide-menu{
+            opacity: 100%;
+         }
+         .fas a{
+            display: block;
+         }
+}
+    @media screen and (max-width:700px){
+        .slide-menu{
+            margin-right: 32%;
+            margin-top: -2.8%;
+        }
+    }
+    @media screen and (max-width: 900px){
+        .maps{
+            margin-left: 20%;
+            color: pink;
+            border: solid red;
+            width: 10%;
+            display: none;
+        }
+        .fas{
+            color: white;
+            float: right;
+            display: block;
+        }
+        .fas a{
+            color: white;
+            font-size: larger;
+            cursor: pointer;
+        }
+    }
+    /* @media screen and (max-width:4000px){
+        
+    } */
+    .active{
+        color: red;
+    }
+    .fas{
+        display: block;
+    }
+    .slide-menu{
+        color: wheat;
+        margin-right: 30%;
+        float: right;
+    }
+ .navbar{
+    min-height: 9vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 28px;
+    font-size: 12.2px;
+    align-items: center;
+    z-index: 1;
+}
+.navbar i{
+    color: blue;
+}
+.navbar .menu, .navbar .log-menu{
+    display: flex;
+    margin-left: 75%;
+    margin-top: -1;
+}
+.innert{
+    position: fixed;
+    border-bottom: solid 3px red;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 12px 10px;
+    background-color: rgb(0, 29, 53);
+    z-index: 1;
+}
+.maps{
+    margin-top: -1%;
+}
+.navbar ul{
+    list-style: none;
+}
+.navbar .menu a{
+    margin-right: 38px;
+    text-decoration: none;
+    cursor: pointer;
+    color: wheat;
+}
+.site_title{
+    font-style: italic;
+    font-size: 11.4px;
+    color: orangered;
+    margin-top: 4%;
+}
+
+</style>
+
+<script src="./js/loader.js"></script>
+<script src="./js/status.js"></script>
+<script src="./app.js"></script>
+<script>
+    const li = document.querySelectorAll('.menu li')[0]
+    li.addEventListener('click', (e)=>{
+        e.preventDefault()
+        alert('Home clicked')
+        window.location.href = '/index.html'
+    })
+</script>

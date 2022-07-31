@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ora Posts....</title>
+    <link rel="stylesheet" href="./font/css/all.css">
+    <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="./css/post.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="shortcut icon" href="./img/logo_2.png" type="image/x-icon">
+</head>
+<body>
+
+    <nav class="navbar">
+
+    </nav>
+    
+    <br>
+
+    <div class="posting" id="post">
+        <p class="flexing_box"> Posts .... </p>
+        <br>
+        <hr>
+        <br>
+
+        <div class="tags">
+            <div id="date" class="date"></div>
+            <ul>
+                <li><input type="file" id="file" accept="image/*"></li>
+                <label for="file"> <a class="fa fa-file"></a> Upload ..</label>
+
+            </ul>
+            <br>
+            <hr>
+        </div>
+        <br>
+        <div class="inpt">
+        <input type="text" placeholder="Write post " id="input">
+      </div>
+        <br>
+        <div class="">
+                </div><div class="content">
+                    <ul id="list">
+                        <!-- <li class="item">
+                            <i class="fa fa-check-circle" job="complete" id="0"></i>
+                            <p class="text">Drink Coffee</p>
+                            <i class="fa fa-trash" job="delete" id="0"></i>
+                        </li> -->
+                    </ul>
+                </div>
+        </div>
+    </div>
+
+    <div class="loads loading_loads" id="loader" >
+        <div class="out">
+         <img src="./img/main.gif" alt="" class="img_forms">
+         <br>
+         <p>PLEASE WAIT A WHILE FOR YOUR CONTENT TO LOADS --<a class="loading"> LOADING !!!</a></p>
+        </div>
+
+    <script>
+      let loader = document.getElementById('loader');
+
+      function Loades_Site_Content(){
+    
+        loader.style.display = 'none'
+
+    }
+
+    function views_content_none(){
+
+        setTimeout(
+            (Loades_Site_Content),
+            9000
+        )
+    }
+    views_content_none()
+
+        const clear = document.querySelector(".clear");
+        const dateElement = document.getElementById('date');
+        const list = document.getElementById('list');
+        const input = document.getElementById('input');
+
+        // const CHECK = 'fa fa-check-circle';
+        const UNCHECK = 'fa fa-circle'; 
+        // const LINE_THROUGH = 'lineThrough';
+
+        //variable //
+        let LIST = [], id ;
+         
+        let data = localStorage.getItem('TODO');
+
+        //check dta//
+        if(data){
+            LIST = JSON.parse(data);
+            id = LIST.length;//
+            loadList(LIST);//
+        }
+        else{
+            LIST = [];
+            id = 0;
+        }
+
+
+        function loadList(array){
+           array.forEach(function(item){
+                addTodo(item.name, item.id, item.done,)
+            });
+
+                // clearing var //
+                clear.addEventListener('click', function(){
+                    localStorage.clear();
+                    location.reload();
+                })
+        }
+
+
+        // date //
+        const options = {weekday : "long", month : "short", day : "numeric"};
+        const today = new Date();
+        dateElement.innerHTML = today.toLocaleString("en-US",options)
+
+        function addTodo(todo, id ,done,trash){
+             if(trash){
+                 return;
+             }
+            const DONE = done ? CHECK : UNCHECK;
+            const LINE = done ? LINE_THROUGH : '';
+            const item =  `
+            <li class="item">
+                    <p class="text" ${LINE}>${todo}</p>
+             </li>
+             <br><br>
+            `
+            const position = "beforeend"
+            list.insertAdjacentHTML(position,item);
+        }
+      
+
+        document.addEventListener("keyup", function(even){
+            if(event.keyCode == 13){
+                const toDo = input.value;
+                if(toDo){
+                    addTodo(toDo,id,false,false);
+
+                    LIST.push({
+                        name : toDo,
+                        id : id,
+                        done : false, 
+                        trash : false
+                    });
+
+                    //storing up the todo's //
+
+                    localStorage.setItem('TODO',JSON.stringify(LIST));
+                    id++;
+
+                }
+                input.value = '';
+            }
+        })
+        // addTodo('coffee',1, true, false)
+      // complete todo //
+        function completeToDo(element){
+            element.classList.toggle(CHECK);
+            element.classList.toggle(UNCHECK);
+            element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
+
+            LIST[element.id].done = LIST[element.id].done ? false : true;
+        }
+// remove todo //
+        function removeToDo(element){
+           element.parentNode,parentNode.removeChild(element.parentNode);
+
+           LIST[element.id].trash = true ;
+        }
+
+        // target iem //
+        list.addEventListener("click", function(event){
+            const element = event.target;
+            const elementJob = element.attributes.job.value;
+
+            if(elementjob == "complete"){
+                completeToDo(element);
+            }
+            else if(elementJob == "delete"){
+                removeToDo(element);
+            }
+
+            //storing up the todo's //
+
+            localStorage.setItem('TODO',JSON.stringify(LIST))
+
+            // ending the storing information //
+        });
+    </script>
+    <script src="./app.js"></script>
+    <!-- <script src="./static/js/loader.js"></script> -->
+</body>
+</html>

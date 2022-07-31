@@ -1,0 +1,86 @@
+.posting{
+    border: solid black;
+    width: 50%;
+    position: relative;
+    margin: auto;
+    border-top: none;
+    border-bottom: none;
+}
+h3{
+    text-align: center;
+    font-style: italic;
+    font-weight: lighter;
+}
+input[type="file"]{
+    display: none;
+}
+label{
+    color: wheat;
+    height: 40px;
+    width: 230px;
+    padding: 5px;
+    text-align: center;
+    border: solid black;
+    background-color: rgb(253, 78, 78);
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat",sans-serif;
+    margin-left: 60%;
+    margin-top: -4%;
+}
+.tags ul li{
+    list-style: none;
+    display: flex;
+    padding-left: 10%;
+}
+.tags{
+    /* width: 95%; */
+    content: 'hi';
+}
+.inpt{
+    margin-left: 10%;
+}
+.flexing_box{
+    display: flex;
+    margin-left: 4%;
+    color: orangered;
+}
+.date{
+    margin-top: 4%;
+    font-style: italic;
+    margin-left: 4%;
+}
+.item{
+    color: blue;
+    display: flex;
+    border: solid blue;
+    padding: 90px 80px;
+    border-radius: 7px;
+    background-color: black;
+    opacity: 70%;
+}
+body{
+    background-image: url('../img/products.png');
+    background-repeat: no-repeat;
+    background-position: cover;
+}
+#input{
+    width: 90%;
+    padding: 8px;
+}
+@media screen and (max-width:700px){
+   label{
+    display: block;
+    margin-left: 53%;
+   }
+   .posting{
+    width: 90%;
+   }
+}
+@media screen and (max-width:500px){
+    label{
+        margin-left: 4%;
+    }
+}

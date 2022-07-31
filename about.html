@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ora Sign Up</title>
+    <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="./css/intro.css">
+    <link rel="stylesheet" href="./css/signup.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="shortcut icon" href="./img/logo_2.png" type="image/x-icon">
+</head>
+<body>
+
+    <nav class="navbar">
+
+    </nav>
+    <br><br>
+  <div class="intro">
+    <h4>Hi</h4><br>
+    <p class="name">I Am Ofori Richard Amanfo. Aweb Based Developer From Scratch To Client Side</p>
+    <br>
+    <p class="styling"><a href="./index.html">RENDER HOMEPAGE NOW !!!!</a></p>
+  </div>
+
+  <img src="./img/worlt.png" alt="" class="wolrd">
+
+    
+    <div class="loads" id="loader">
+        <div class="out">
+         <img src="./img/main.gif" alt="" class="img_forms">
+         <br>
+         <p>PLEASE WAIT A WHILE FOR YOUR CONTENT TO LOADS --<a class="loading"> LOADING !!!</a></p>
+        </div>
+        <script>
+            let loader = document.getElementById('loader');
+   
+           function Loades_Site_Content(){
+   
+           loader.style.display = 'none'
+   
+           }
+   
+           function views_content_none(){
+   
+           setTimeout(
+               (Loades_Site_Content),
+               0000
+           )
+           }
+           views_content_none()
+        </script>
+    <script src="./app.js"></script>
+    <!-- <script src="./static/js/loader.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,44 @@
+.info_container{
+    position: absolute;
+    margin: auto;
+    width: 50%;
+    position: relative;
+}
+.use_txt{
+    font-style: italic;
+    font-size: larger;
+    font-weight: lighter;
+}
+.cont{
+    margin-left: -35%;
+}
+.pat{
+    margin-left: 75%;
+    margin-top: -15%;
+}
+.under{
+    padding: 20px 20px;
+    color: orangered;
+}
+.via{
+    margin-left: 20%;
+    margin-top: 7%;
+}
+.all{
+    list-style: none;
+    text-decoration: none;
+    color: steelblue;
+}
+@media screen and (max-width: 700px){
+    .use_txt{
+        width: 160%;
+        margin-left: -15%;
+        font-size: smaller;
+    }
+    .pat{
+        margin-left: -70%;
+    }
+    .cont{
+        margin-left: -80%;
+    }
+}

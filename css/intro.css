@@ -1,0 +1,44 @@
+.intro{
+    position: relative;
+    margin: auto;
+    width: 55%;
+    margin-top: 8%;
+}
+.styling{
+    border: solid orangered;
+    width: 70%;
+    padding: 20px 80px;
+    text-align: center;
+    border-radius: 27px;
+    cursor: pointer;
+    margin-top: 5%;
+    text-decoration: none;
+    color: black;
+    text-shadow: 0.5px 0.5px  blue;
+}
+.styling:hover{
+    transition: 1s ease-in-out;
+    background-color: steelblue;
+    color: rgb(247, 122, 122);
+    text-decoration: none;
+}
+.name{
+    font: bolder;
+    font-style: italic;
+    font-weight: lighter;
+}
+.wolrd{
+   margin-left: 55%;
+}
+@media screen and (max-width:600px){
+    .styling{
+        width: 180%;
+        margin-left: -40%;
+        margin-top: 40%;
+    }
+    .wolrd{
+        width: 50%;
+        margin-top: 30%;
+        margin-left: 50%;
+    }
+}
